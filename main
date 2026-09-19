@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>happiest birthday, aly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night: #211a2c;
+    --night-deep: #17121f;
+    --plum: #372c47;
+    --cream: #f3e9d8;
+    --cream-dim: #cdc0d9;
+    --candle: #e7a35c;
+    --candle-soft: #f0c088;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html{ scroll-padding-top: env(safe-area-inset-top, 0px); height:100%; }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0;
+    min-height:100%;
+    background:
+      radial-gradient(ellipse 70% 45% at 50% 8%, rgba(231,163,92,0.10), transparent 60%),
+      linear-gradient(180deg, var(--night-deep), var(--night) 40%, var(--plum) 100%);
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    overflow-x:hidden;
+  }
+
+  /* faint stars */
+  .stars{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+  }
+  .stars span{
+    position:absolute; width:2px; height:2px; border-radius:50%;
+    background: var(--cream); opacity:.35;
+    animation: twinkle 4.5s ease-in-out infinite;
+  }
+  @keyframes twinkle{ 0%,100%{opacity:.12;} 50%{opacity:.55;} }
+
+  .wrap{ position:relative; z-index:1; width:100%; max-width:620px; padding: 8vh 1.5rem 10vh; }
+
+  /* candle hero */
+  .candle-scene{
+    display:flex; flex-direction:column; align-items:center;
+    margin-bottom: 3.5rem;
+  }
+  .flame-wrap{ width:14px; height:34px; position:relative; }
+  .flame{
+    position:absolute; left:0; right:0; bottom:0; margin:auto;
+    width:11px; height:26px; border-radius:60% 60% 55% 55%/70% 70% 40% 40%;
+    background: radial-gradient(circle at 50% 75%, #fff6df 0%, var(--candle-soft) 35%, var(--candle) 65%, rgba(231,163,92,0) 100%);
+    filter: blur(0.2px);
+    transform-origin: bottom center;
+    animation: flicker 2.6s ease-in-out infinite;
+    box-shadow: 0 0 18px 6px rgba(231,163,92,0.35);
+  }
+  @keyframes flicker{
+    0%,100%{ transform: scaleY(1) rotate(0deg); }
+    20%{ transform: scaleY(0.96) rotate(-1.5deg); }
+    45%{ transform: scaleY(1.05) rotate(1deg); }
+    70%{ transform: scaleY(0.9) rotate(-0.5deg); }
+    85%{ transform: scaleY(1.02) rotate(1.5deg); }
+  }
+  .wick{ width:2px; height:6px; background:#3a2f2f; margin:0 auto; }
+  .candle-body{
+    width:20px; height:56px; margin-top:-2px;
+    background: linear-gradient(90deg, #d8c9b0, #f3e9d8 45%, #d8c9b0);
+    border-radius: 3px 3px 2px 2px;
+    box-shadow: inset -3px 0 4px rgba(0,0,0,0.15);
+  }
+  .clock-line{
+    margin-top: 1.4rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    color: var(--candle-soft);
+    font-style: italic;
+  }
+
+  h1{
+    font-weight: 500;
+    font-size: clamp(2.1rem, 7vw, 3.1rem);
+    line-height: 1.15;
+    text-align:center;
+    margin: 0 0 0.3rem;
+    color: var(--cream);
+  }
+  h1 em{
+    font-style: italic;
+    color: var(--candle-soft);
+  }
+  .subhead{
+    text-align:center;
+    color: var(--cream-dim);
+    font-size: 1.05rem;
+    font-style: italic;
+    margin-bottom: 3.2rem;
+  }
+
+  .letter{
+    font-size: clamp(1.08rem, 2.4vw, 1.28rem);
+    line-height: 1.85;
+    color: var(--cream);
+  }
+  .letter p{
+    margin: 0 0 1.5rem;
+  }
+  .letter p:first-of-type::first-letter{
+    font-size: 2.6rem;
+    line-height: 0.6;
+    padding-right: 0.15rem;
+    color: var(--candle-soft);
+    font-style: italic;
+  }
+  .to-line{
+    font-style: italic;
+    color: var(--cream-dim);
+    margin-bottom: 2rem !important;
+  }
+
+  .sign{
+    margin-top: 3rem;
+    text-align: right;
+  }
+  .sign p{ margin:0; }
+  .sign .line1{
+    color: var(--cream-dim);
+    font-style: italic;
+    font-size: 1rem;
+  }
+  .sign .name{
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--candle-soft);
+    margin-top: 0.2rem;
+  }
+
+  .divider{
+    width: 46px; height:1px;
+    background: linear-gradient(90deg, transparent, rgba(231,163,92,0.6), transparent);
+    margin: 2.6rem auto;
+  }
+
+  .heart{
+    text-align:center;
+    color: var(--candle-soft);
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .flame, .stars span{ animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="wrap">
+
+  <div class="candle-scene">
+    <div class="flame-wrap"><div class="flame"></div></div>
+    <div class="wick"></div>
+    <div class="candle-body"></div>
+    <div class="clock-line">11:57 pm &mdash; a few minutes still left of today</div>
+  </div>
+
+  <h1>happiest birthday,<br><em>aly</em></h1>
+  <p class="subhead">a letter, before today becomes yesterday</p>
+
+  <div class="letter">
+    <p class="to-line">para kay popo &mdash;</p>
+
+    <p>Its almost midnight na po, and your birthday is about to become yesterday, but I wanted to catch these last few minutes with you before it does. I hope today gave you a reason to smile more than once. I hope somewhere in the middle of all of it, you felt how loved you are, popo.</p>
+
+    <p>Another year of you. Another year I get to know you a little better, laugh with you a little more, love you a little deeper &mdash; and for sure I won't take that for granted, popo. I feel lucky in a way, na just knowing you, just being close to your life. And for sure, I always say this pero I do always pray for you and us, na sobrang blessed and grateful ko na I have you.</p>
+
+    <p>So before the clock turns and today becomes a memory, I wanted to pray this before the day goes na: I'm so glad you're here. I'm so happy na you're mine to love, and I just want you to know na I'm so delighted na you were born, aly. Thank u kay tita na pinanganak ka niya, and thank u kay Lord on giving u life &mdash; my heart is so happy its you.</p>
+
+    <p>Happiest birthday to the girl who makes everything better when she's on it. I love you always, aly.</p>
+
+    <div class="heart">&#10084;</div>
+
+    <div class="sign">
+      <p class="line1">always here for u,</p>
+      <p class="name">kiko</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+</div>
+
+<script>
+  const starField = document.getElementById('stars');
+  const n = 60;
+  for(let i=0;i<n;i++){
+    const s = document.createElement('span');
+    s.style.left = Math.random()*100 + '%';
+    s.style.top = Math.random()*55 + '%';
+    s.style.animationDelay = (Math.random()*4.5) + 's';
+    s.style.width = s.style.height = (Math.random()<0.15 ? '3px':'1.5px');
+    starField.appendChild(s);
+  }
+</script>
+
+</body>
+</html>
